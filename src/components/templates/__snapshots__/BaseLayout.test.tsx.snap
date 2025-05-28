@@ -11,15 +11,3 @@ exports[`BaseLayout > should match snapshot. 1`] = `
   </div>
 </div>
 `;
-
-exports[`BaseLayout > snapshot 1`] = `
-<div>
-  <div>
-    <header />
-    <main>
-      test
-    </main>
-    <footer />
-  </div>
-</div>
-`;
