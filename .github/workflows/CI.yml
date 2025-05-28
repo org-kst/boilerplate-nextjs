@@ -66,3 +66,22 @@ jobs:
 
       - name: Run build
         run: pnpm build
+
+  test-unit:
+    name: Run Unit Test
+    needs: check-changes
+    if: needs.check-changes.outputs.file_changed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Common Setup
+        uses: ./.github/actions/setup-node-pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+      
+      - name: Run test
+        run: pnpm test
+      
