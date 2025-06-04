@@ -1,14 +1,15 @@
 name: Setup Node.js and PNPM
 
-description: Common setup for Node 20 and PNPM 10
+description: Common setup for Node 20 and PNPM
 
 runs:
   using: 'composite'
   steps:
     - name: Install pnpm
       uses: pnpm/action-setup@v4
-      with:
-        version: 10
+      # NOTE: 公式ドキュメントを参考にDockerfileでcorepack enableした結果エラーが発生するようになったためコメントアウト
+      # with:
+      # version: 10
 
     - name: Use Node.js 20
       uses: actions/setup-node@v4
